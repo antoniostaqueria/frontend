@@ -8,7 +8,7 @@ class Index extends React.Component {
             <>
                 <img id="logo" src={ logo } alt="antonio's logo"/>
                 <div id="message">
-                    Celebra el Martes de Marisco Con Nosotros!
+                    Celebra el Martes de Mariscos Con Nosotros!
                 </div>
                 <div class="footer">
                     <a href="/order/create" class="link-button">Orders</a>
