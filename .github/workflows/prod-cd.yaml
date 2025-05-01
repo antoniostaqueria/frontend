@@ -10,6 +10,6 @@ jobs:
     uses: GlueOps/github-workflows/.github/workflows/argocd-tags-ci.yml@fix-monorepo-by-adding-DEPLOYMENT_CONFIGS_APP_NAME-to-the-PR-name
     secrets: inherit
     with:
-      DEPLOYMENT_CONFIGS_APP_NAME: "frontend-fun"
+      DEPLOYMENT_CONFIGS_APP_NAME: "frontend"
       ENV: 'prod'
       CREATE_PR: true
