@@ -1,4 +1,4 @@
-name: Prod CD
+name: Stage CD
 
 on:
   release:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: GlueOps/github-actions-bump-deployment-tag@5505ab25583ca128e85bbaba0c76e52fc75b8118 # v1.0.0
         with:
-          ENV: prod
+          ENV: stage
           CREATE_PR: 'true'
           app-id: ${{ vars.GLUEOPS_DEPLOYMENT_APP_ID }}
           private-key: ${{ secrets.GLUEOPS_DEPLOYMENT_APP_PRIVATE_KEY }}
