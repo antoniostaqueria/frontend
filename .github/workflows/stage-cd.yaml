@@ -1,14 +1,17 @@
-name: stage CD
+name: Prod CD
 
 on:
-  pull_request:
+  release:
     types:
-      - closed
+      - created
+      
 jobs:
-  update-tags:
-    uses: GlueOps/github-workflows/.github/workflows/argocd-tags-ci.yml@main
-    if: github.event.pull_request.merged == true
-    secrets: inherit
-    with:
-      ENV: 'stage'
-      CREATE_PR: false
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: GlueOps/github-actions-bump-deployment-tag@5505ab25583ca128e85bbaba0c76e52fc75b8118 # v1.0.0
+        with:
+          ENV: prod
+          CREATE_PR: 'true'
+          app-id: ${{ vars.GLUEOPS_DEPLOYMENT_APP_ID }}
+          private-key: ${{ secrets.GLUEOPS_DEPLOYMENT_APP_PRIVATE_KEY }}
