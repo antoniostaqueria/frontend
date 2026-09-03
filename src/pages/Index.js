@@ -7,6 +7,10 @@ import card from '../assets/credit-card.svg';
 
 // Where the "What cloud am I on?" link points. Set per environment via
 // REACT_APP_WHEREAMI_URL (read at server start, like REACT_APP_API_DOMAIN_NAME).
+// "Find Us" points at the real Sombrero Galaxy (Messier 104) — NASA's Hubble page.
+const VISIT_URL =
+    "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-104/";
+
 const WHEREAMI_URL =
     process.env.REACT_APP_WHEREAMI_URL ||
     "https://stage-cloud-migrate-demo.apps.nonprod.antoniostaqueria.onglueops.com";
@@ -23,7 +27,7 @@ class Index extends React.Component {
                     </p>
                     <div className="cta-row">
                         <a href="/order/create" className="btn btn-primary">Order Online</a>
-                        <a href="#visit" className="btn btn-ghost">Find Us</a>
+                        <a href={ VISIT_URL } target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Find Us</a>
                     </div>
                 </header>
 
@@ -57,7 +61,11 @@ class Index extends React.Component {
                     <div className="info-card">
                         <img src={ geo } alt="" aria-hidden="true"/>
                         <h4>Location</h4>
-                        <p>104 Sombrero Galaxy Way<br/>Messier, MW 00104</p>
+                        <p>
+                            <a className="location-link" href={ VISIT_URL } target="_blank" rel="noopener noreferrer">
+                                104 Sombrero Galaxy Way<br/>Messier, MW 00104
+                            </a>
+                        </p>
                     </div>
                     <div className="info-card">
                         <img src={ card } alt="" aria-hidden="true"/>

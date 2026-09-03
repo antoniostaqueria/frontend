@@ -163,6 +163,16 @@ body {
     line-height: 1.5;
 }
 
+.location-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.location-link:hover {
+    color: var(--taco-orange-dark);
+    text-decoration: underline;
+}
+
 /* --- Footer --- */
 .site-footer {
     display: flex;
