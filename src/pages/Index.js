@@ -57,7 +57,7 @@ class Index extends React.Component {
                     <div className="info-card">
                         <img src={ geo } alt="" aria-hidden="true"/>
                         <h4>Location</h4>
-                        <p>412 Mission St<br/>Wenatchee, WA</p>
+                        <p>104 Sombrero Galaxy Way<br/>Messier, MW 00104</p>
                     </div>
                     <div className="info-card">
                         <img src={ card } alt="" aria-hidden="true"/>
