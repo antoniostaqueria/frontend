@@ -9,7 +9,7 @@ import card from '../assets/credit-card.svg';
 // REACT_APP_WHEREAMI_URL (read at server start, like REACT_APP_API_DOMAIN_NAME).
 const WHEREAMI_URL =
     process.env.REACT_APP_WHEREAMI_URL ||
-    "https://stage.cloud-migrate-demo.apps.nonprod.antoniostaqueria.onglueops.com";
+    "https://stage-cloud-migrate-demo.apps.nonprod.antoniostaqueria.onglueops.com";
 
 class Index extends React.Component {
     render() {
