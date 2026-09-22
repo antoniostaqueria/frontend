@@ -12,7 +12,7 @@ jobs:
       matrix:
         # one PR per environment in deployment-configurations; merging a PR
         # rolls the release out to that cluster independently
-        env: [prod, us-west-2-aws, ch-gva-2-exoscale]
+        env: [prod, us-west-2-aws, ch-gva-2-exoscale, hel1-hetzner]
     steps:
       - uses: GlueOps/github-actions-bump-deployment-tag@5505ab25583ca128e85bbaba0c76e52fc75b8118 # v1.0.0
         with:
