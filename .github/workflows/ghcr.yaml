@@ -49,10 +49,15 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@e468171a9de216ec08956ac3ada2f0791b6bd435 # v3.11.1
 
-      # Login against a Docker registry except on PR
+      # Login on PRs too, which diverges from the shared workflow in the other
+      # repos. This repo's Dockerfile is `FROM ghcr.io/<this repo>:<sha>` — the
+      # image is built on a previous version of itself — and that package is
+      # private, so a PR build with no credentials cannot even pull its base:
+      #   failed to fetch anonymous token: .../token?scope=repository:
+      #   antoniostaqueria/frontend:pull → 401 Unauthorized
+      # Pushing is still gated on the event below; this only grants pull.
       # https://github.com/docker/login-action
       - name: Log into registry ${{ env.REGISTRY }}
-        if: github.event_name != 'pull_request'
         uses: docker/login-action@5e57cd118135c172c3672efd75eb46360885c0ef # v3.6.0
         with:
           registry: ${{ env.REGISTRY }}
